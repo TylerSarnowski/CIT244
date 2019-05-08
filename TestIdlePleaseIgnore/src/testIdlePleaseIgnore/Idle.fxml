@@ -1,0 +1,411 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Separator?>
+<HBox fx:id="IdleGamePleaseIgnore" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="testIdlePleaseIgnore.IdleGameController" stylesheets="@../resource/fxCSS.css">
+    <padding><Insets top="10" left="10" right="10" bottom="10"/></padding>
+    <!--Point Column-->
+    <VBox>
+        <!--Points box-->
+        <VBox>
+            <HBox>
+                <Label
+                    text="Total Points: "
+                    />
+                <Label
+                    text="0"
+                    fx:id="totalPoints"
+                    />
+            </HBox>
+            <Button
+                text="Click"
+                onAction="#pointClicker"
+                />
+        </VBox><!--Points box end-->
+        <!--Clicker box-->
+        <VBox>
+            <Label
+                text="------------------------------"
+                />
+            <HBox>
+                <Label
+                    text="1"
+                    fx:id="noOfClickers"
+                    />
+                <Label
+                    text=" Clickers"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="1"
+                    fx:id="clickerPPC"
+                    />
+                <Label
+                    text=" Points per click"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="Purchase Cost: "
+                    />
+                <Label
+                    text="5"
+                    fx:id="purchasePriceClicker"
+                    />
+            </HBox>
+            <Button
+                text="Purchase"
+                onAction="#purchaseClicker"
+                />
+        </VBox><!--Clicker box end-->
+        <!--Generator box-->
+        <VBox fx:id="generatorBox">
+            <Label
+                text="------------------------------"
+                />
+            <HBox>
+                <Label
+                    text="0"
+                    fx:id="noOfGenerators"
+                    />
+                <Label
+                    text=" Generators"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="0"
+                    fx:id="generatorPPS"
+                    />
+                <Label
+                    text=" Points per second"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="Purchase Cost: "
+                    />
+                <Label
+                    text="250"
+                    fx:id="purchasePriceGenerator"
+                    />
+            </HBox>
+            <Button
+                text="Purchase"
+                onAction="#purchaseGenerator"
+                />
+        </VBox><!--Generator box end-->
+        <!--Farm box-->
+        <VBox fx:id="farmBox">
+            <Label
+                text="------------------------------"
+                />
+            <HBox>
+                <Label
+                    text="0"
+                    fx:id="noOfFarms"
+                    />
+                <Label
+                    text=" Farms"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="0"
+                    fx:id="farmPPS"
+                    />
+                <Label
+                    text=" Points per second"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="Purchase Cost: "
+                    />
+                <Label
+                    text="1000"
+                    fx:id="purchasePriceFarm"
+                    />
+            </HBox>
+            <Button
+                text="Purchase"
+                onAction="#purchaseFarm"
+                />
+        </VBox><!--Farm box end-->
+        <!--Factory box-->
+        <VBox fx:id="factoryBox">
+            <Label
+                text="------------------------------"
+                />
+            <HBox>
+                <Label
+                    text="0"
+                    fx:id="noOfFactories"
+                    />
+                <Label
+                    text=" Factories"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="0"
+                    fx:id="factoryPPS"
+                    />
+                <Label
+                    text=" Points per second"
+                    />
+            </HBox>
+            <HBox>
+                <Label
+                    text="Purchase Cost: "
+                    />
+                <Label
+                    text="5000"
+                    fx:id="purchasePriceFactory"
+                    />
+            </HBox>
+            <Button
+                text="Purchase"
+                onAction="#purchaseFactory"
+                />
+        </VBox><!--Factory box end-->
+    </VBox><!--Point Column End-->
+    <!--Separator-->
+    <VBox>
+        <Separator
+            minWidth="5"
+            minHeight="400"
+            orientation="VERTICAL"
+            />
+    </VBox><!--Separator End-->
+    <!--Specific Upgrade Column-->
+    <VBox fx:id="specificUpgrades" visible="false">
+        <!--Column Header-->
+        <VBox>
+            <Label
+                text="Upgrades"
+                />
+            <Label
+                    minHeight="23"
+                />
+        </VBox><!--Column Header End-->
+        <!--Clicker Upgrades-->
+        <VBox fx:id="clickerBoxUpgrades">
+            <Label
+                text="------------------------------"
+                />
+            <Label
+                text="Clicker Upgrade"
+                />
+            <HBox>
+                <Label
+                    text="Cost: "
+                    />
+                <Label
+                    text="0"
+                    fx:id="clickerUpgradeCost"
+                    />
+            </HBox>
+            <Label
+                />
+            <Button
+                text="Purchase"
+                onAction="#purchaseClickerUpgrade"
+                />
+        </VBox><!--Clicker Upgrade End-->
+        <!--Generator Upgrades-->
+        <VBox fx:id="generatorBoxUpgrades" visible="false">
+            <Label
+                text="------------------------------"
+                />
+            <Label
+                text="Generator Upgrade"
+                />
+            <HBox>
+                <Label
+                    text="Cost: "
+                    />
+                <Label
+                    text="0"
+                    fx:id="generatorUpgradeCost"
+                    />
+            </HBox>
+            <Label
+                />
+            <Button
+                text="Purchase"
+                onAction="#purchaseGeneratorUpgrade"
+                />
+        </VBox><!--Generator Upgrade End-->
+        <!--Farm Upgrades-->
+        <VBox fx:id="farmBoxUpgrades" visible="false">
+            <Label
+                    text="------------------------------"
+            />
+            <Label
+                    text="Farm Upgrade"
+            />
+            <HBox>
+                <Label
+                        text="Cost: "
+                />
+                <Label
+                        text="0"
+                        fx:id="farmUpgradeCost"
+                />
+            </HBox>
+            <Label
+            />
+            <Button
+                    text="Purchase"
+                    onAction="#purchaseFarmUpgrade"
+            />
+        </VBox><!--Farm Upgrade End-->
+        <!--Factory Upgrades-->
+        <VBox fx:id="factoryBoxUpgrades" visible="false">
+            <Label
+                    text="------------------------------"
+            />
+            <Label
+                    text="Factory Upgrade"
+            />
+            <HBox>
+                <Label
+                        text="Cost: "
+                />
+                <Label
+                        text="0"
+                        fx:id="factoryUpgradeCost"
+                />
+            </HBox>
+            <Label
+            />
+            <Button
+                    text="Purchase"
+                    onAction="#purchaseFactoryUpgrade"
+            />
+        </VBox><!--Factory Upgrade End-->
+    </VBox><!--Upgrade Column End-->
+    <!--Separator-->
+    <VBox>
+        <Separator
+                minWidth="5"
+                minHeight="400"
+                orientation="VERTICAL"
+        />
+    </VBox><!--Separator End-->
+    <!--Universal Upgrade Column-->
+    <VBox  fx:id="universalUpgrades" visible="false">
+        <!--Column Header-->
+        <VBox>
+            <Label
+                    text="Upgrades"
+            />
+            <Label
+                    minHeight="23"
+            />
+        </VBox><!--Column Header End-->
+        <!--Tick Upgrades-->
+        <VBox fx:id="tickUpgrade" visible="false">
+            <Label
+                    text="------------------------------"
+            />
+            <Label
+                    text="Tick Upgrade"
+            />
+            <HBox>
+                <Label
+                        text="Cost: "
+                />
+                <Label
+                        text="0"
+                        fx:id="tickUpgradeCost"
+                />
+            </HBox>
+            <Label
+            />
+            <Button
+                    text="Purchase"
+                    onAction="#purchaseTickUpgrade"
+            />
+        </VBox><!--Tick Upgrade End-->
+        <!--Cost Reduction Upgrades-->
+        <VBox fx:id="costReductionUpgrade">
+            <Label
+                    text="------------------------------"
+            />
+            <Label
+                    text="Cost Reduction Upgrade"
+            />
+            <HBox>
+                <Label
+                        text="Cost: "
+                />
+                <Label
+                        text="0"
+                        fx:id="costReductionUpgradeCost"
+                />
+            </HBox>
+            <Label
+            />
+            <Button
+                    text="Purchase"
+                    onAction="#purchaseCostReductionUpgrade"
+            />
+        </VBox><!--Cost Reduction Upgrade End-->
+        <!--Farm Upgrades-->
+        <VBox visible="false">
+            <Label
+                    text="------------------------------"
+            />
+            <Label
+                    text="Farm Upgrade"
+            />
+            <HBox>
+                <Label
+                        text="Cost: "
+                />
+                <Label
+                        text="0"
+                        fx:id="temp3"
+                />
+            </HBox>
+            <Label
+            />
+            <Button
+                    text="Purchase"
+                    onAction="#purchaseFarmUpgrade"
+            />
+        </VBox><!--Farm Upgrade End-->
+        <!--Factory Upgrades-->
+        <VBox visible="false">
+            <Label
+                    text="------------------------------"
+            />
+            <Label
+                    text="Factory Upgrade"
+            />
+            <HBox>
+                <Label
+                        text="Cost: "
+                />
+                <Label
+                        text="0"
+                        fx:id="temp4"
+                />
+            </HBox>
+            <Label
+            />
+            <Button
+                    text="Purchase"
+                    onAction="#purchaseFactoryUpgrade"
+            />
+        </VBox><!--Factory Upgrade End-->
+    </VBox><!--Upgrade Column End-->
+</HBox>
